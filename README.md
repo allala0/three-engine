@@ -35,6 +35,6 @@ three-engine is game/ engine for three.js.
 Creator: <b>Artur Brytkowski</b> 
 <br>
 
- - <a href="https://www.fiverr.com/arturbrytkowski">Fiverr</a>
- - <a href="https://github.com/allala0">GitHub</a>
+ - <a target="_blank" href="https://www.fiverr.com/arturbrytkowski">Fiverr</a>
+ - <a target="_blank" href="https://github.com/allala0">GitHub</a>
  
