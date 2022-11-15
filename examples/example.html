@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html allow="autoplay">
+    <head>
+        <title>three-engine-example</title>
+
+        <meta name = "viewport" content = "width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+
+        <link rel="icon" href="data:,">
+        
+        <style>
+            body{
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+
+        <!-- Remove this when import maps will be widely supported -->
+        <script defer src="../lib/es-module-shims/es-module-shims.js"></script>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "../lib/three.js/build/three.module.js",
+                    "three/addons/": "../lib/three.js/examples/jsm/",
+                    "three-engine": "../ThreeEngine.js",
+                    "three-engine/tools/": "../tools/"
+                }
+            }
+        </script>
+
+        <script defer type="module" src="./example.js"></script>
+    </head>
+    <body>
+
+    </body>
+</html>
