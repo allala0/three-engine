@@ -1,6 +1,6 @@
 <h1 align="center"><b>three-engine</b></h1>
 <p align="center">
-    <img src="./assets/img/preview.png" style="max-height: 40vh;">
+    <img src="https://global.discourse-cdn.com/standard17/uploads/threejs/optimized/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751_2_1016x1024.png" style="max-height: 40vh;">
 </p>
 <br>
 
