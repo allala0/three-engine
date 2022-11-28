@@ -14,9 +14,10 @@ module.exports = (env, argv) => {
     const IS_DEVELOPMENT = argv.mode === 'development';
 
     const commonConfig = {
-        externals: {
-            three: 'three',
-          },
+        externals: [
+            {three: 'three'},
+            /^three\/addons\//,
+        ],
         devServer: {
             magicHtml: true,
             historyApiFallback: true,
