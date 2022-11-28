@@ -94,13 +94,12 @@ new ThreeEngine({
         }
     },
     setup: {
-        useSampleLights: true,
+        enableTestLights: true,
         useAntialias: true,
-        useShadows: true,
         disableContextMenu: true,
-        useLoadingCircle: true,
+        enableLoadingCircle: true,
         DEV_MODE: true,
-        useControls: true,
+        enableControls: true,
         cameraPosition: new THREE.Vector3(0, 0, 5),
         cameraType: 'orthographic',
         orthographicCameraMinWidth: 4,

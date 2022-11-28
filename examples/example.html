@@ -17,14 +17,14 @@
         </style>
 
         <!-- Remove this when import maps will be widely supported -->
-        <script defer src="../lib/es-module-shims/es-module-shims.js"></script>
+        <script defer src="./lib/es-module-shims/es-module-shims.js"></script>
         <script type="importmap">
             {
                 "imports": {
-                    "three": "../lib/three.js/build/three.module.js",
-                    "three/addons/": "../lib/three.js/examples/jsm/",
-                    "three-engine": "../ThreeEngine.js",
-                    "three-engine/tools/": "../tools/"
+                    "three": "./lib/three.js/build/three.module.js",
+                    "three/addons/": "./lib/three.js/examples/jsm/",
+                    "three-engine": "../build/three-engine.module.js",
+                    "three-engine/tools/": "../src/tools/"
                 }
             }
         </script>

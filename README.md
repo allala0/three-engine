@@ -1,6 +1,6 @@
 <h1 align="center"><b>three-engine</b></h1>
 <p align="center">
-    <img src="./assets/preview.png" style="max-height: 40vh;">
+    <img src="./assets/img/preview.png" style="max-height: 40vh;">
 </p>
 <br>
 
@@ -11,25 +11,36 @@ three-engine is game/ engine for three.js.
 
 ## TODO
 
+- [ ] **Axes helper with signed axes**
+- [ ] **Screenshots**
 - [ ] **Thick lines**
 - [ ] **Built in shaders**
     - [ ] **Outline shader**
-- [ ] **Particles**
+- [ ] **Particle system**
 - [ ] **Geometry sprites**
-- [ ] **Custom geometries**
-- [ ] **Physics**
+- [ ] **Physics engine**
 - [ ] **3D models**
 - [ ] **3D models animations**
 - [ ] **PerspectiveCamera min width**
-- [ ] **Custom geometries**
+- [ ] **Builtin custom geometries**
+- [ ] **Geometry editor**
 - [ ] **Postprocessing pipeline manager**
-- [ ] **Editor(adding, moving and rotating objects with mouse)**
+- [ ] **3D Editor with UI (adding, moving and rotating, scaling objects, lights, cameras etc. with mouse)**
+- [ ] **Material editor**
 - [ ] **Zoom to cursor in controls**
 - [ ] **First person camera**
 - [ ] **Third person camera**
 - [ ] **Keyboard and mouse controls**
-- [ ] **Multiplayer engine**
+- [ ] **Multiplayer engine (Colyseus)**
 - [ ] **AI**
+- [ ] **Helpers for test lights**
+- [ ] **Custom loading screens**
+- [ ] **Shadow config in gui**
+- [ ] **Keyboard input**
+- [ ] **UI system**
+- [ ] **Sound system**
+- [ ] **Settings template**
+- [ ] **Mobile touch controls (pinch)**
 
 <br>
 Creator: <b>Artur Brytkowski</b> 
