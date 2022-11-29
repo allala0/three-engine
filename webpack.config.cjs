@@ -2,8 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const NAME = 'three-engine';
+const MODULE_NAME = 'three-engine';
+const VARIABLE_NAME = 'ThreeEngine';
 const BUILD_DIRECTORY = 'build';
+const ENTRY_FILE = 'src/three-engine.js';
 
 const USE_SOURCE_MAP_IN_DEVELOPMENT = true;
 const USE_CONTENT_HASH_IN_DEVELOPMENT = true;
@@ -13,14 +15,9 @@ const BUILD_AS_MODULE = process.argv.indexOf('module') > -1;
 module.exports = (env, argv) => {
     const IS_DEVELOPMENT = argv.mode === 'development';
     const BUILD_FOR_DEV_SERVER = process.argv.indexOf('serve') > -1;
-    console.log(BUILD_FOR_DEV_SERVER)
 
     const commonConfig = () => {
         return {
-            externals: [
-                {three: 'three'},
-                /^three\/addons\//,
-            ],
             devServer: {
                 static: [{
                     directory: path.resolve(__dirname, BUILD_AS_MODULE ? '' : BUILD_DIRECTORY)
@@ -68,7 +65,7 @@ module.exports = (env, argv) => {
     };
     
     const getConfig = type => {
-        let filename = NAME;
+        let filename = MODULE_NAME;
         let isMin = type === 'min.js';
         let ext;
     
@@ -78,10 +75,14 @@ module.exports = (env, argv) => {
         else if(type === 'commonjs') ext = '.cjs';
         else return;
     
-        if(type === 'js' || type === 'min.js') type = 'global';
+        if(type === 'js' || type === 'min.js') type = 'assign';
     
         return {
             ...commonConfig(),
+            externals: [
+                {'three': type === 'module' ? 'three' : 'THREE'},
+                ...(type === 'module' ? [/^three\/addons\//] : [])
+            ],
             ...(!BUILD_AS_MODULE ? {plugins: [
                 new HtmlWebpackPlugin({
                     title: 'webpack-app',
@@ -92,21 +93,22 @@ module.exports = (env, argv) => {
                 }),
                 ...(USE_BUNDLE_ANALYZER_IN_DEVELOPMENT && IS_DEVELOPMENT ? [new BundleAnalyzerPlugin()] : [])
             ]} : {}),
-            ...(type === 'module' ?{experiments: {
+            ...(type === 'module' ? {experiments: {
                 outputModule: true
             }} : {}),
             entry: {
-               [filename]: path.resolve(__dirname, 'src/three-engine.js')
+               [filename]: path.resolve(__dirname, ENTRY_FILE)
             },
             output: {
                 path: path.resolve(__dirname, BUILD_DIRECTORY),
                 filename: '[name]' + (USE_CONTENT_HASH_IN_DEVELOPMENT && IS_DEVELOPMENT ? '[contenthash]' : '') + ext,
                 assetModuleFilename: '[name][ext]',
                 ...(BUILD_AS_MODULE ? {
-                library: {
-                    ...(type === 'module' ? {} : {name: NAME}),
-                    type: type
-                },
+                    library: {
+                        ...(type === 'module' ? {} : {export: 'default'}),
+                        ...(type === 'module' ? {} : {name: VARIABLE_NAME}),
+                        type: type
+                    },
                 } : {})
             },
             optimization: {

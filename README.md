@@ -5,12 +5,38 @@
 <br>
 
 <h2>What is <b>three-engine</b>?</h2>
-three-engine is game/ engine for three.js.
+three-engine is framework/engine for three.js.
 <br>
 <br>
+
+## How to install
+    npm install three-engine
+
+## How to use
+    import ThreeEngine from 'three-engine';
+    new ThreeEngine({
+        callbacks: {
+            init: threeEngine => {
+                const box = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.5, 0.5), new THREE.MeshStandardMaterial);
+                box.setupClickable();
+                threeEngine.scene.add(box);
+                box.onClick = function(){console.log('Clicked')};
+                box.onHover = function(){console.log('Hovered')};
+            }
+        },
+        setup: {
+            enableControls: true,
+            enableTestLights: true,
+            enableAntialias: true,
+            DEV_MODE: true
+        }
+    });
+
+You can find example in <b>/examples/example.js</b>.
+To run example: <b>npm start</b>
 
 ## TODO
-
+- [ ] **Export all tools in ThreeEngine**
 - [ ] **Axes helper with signed axes**
 - [ ] **Screenshots**
 - [ ] **Thick lines**

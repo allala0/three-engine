@@ -24,11 +24,13 @@ import transitionFunctions from 'three-engine/tools/transitions/transitionFuncti
 
 let box, transitionChain, animatedPlane;
 
+console.log(ThreeEngine)
+
 new ThreeEngine({
     domContainer: document.body, 
     callbacks: {
         init: threeEngine => {
-            
+
         },
         initLoaded: threeEngine => {
             const gap = 0.015;
