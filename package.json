@@ -1,10 +1,29 @@
 {
   "name": "three-engine",
-  "keywords": ["three-engine", "three.js", "engine", "three", "js", "javascript", "framework", "three", "3d", "virtual-reality", "augmented-reality", "webgl", "webgl2", "webaudio", "webgpu", "webxr", "canvas", "svg", "html5"],
-  "version": "1.0.2",
-  "description": "Engine for three.js",
+  "keywords": [
+    "three-engine",
+    "three.js",
+    "engine",
+    "three",
+    "js",
+    "javascript",
+    "framework",
+    "three",
+    "3d",
+    "virtual-reality",
+    "augmented-reality",
+    "webgl",
+    "webgl2",
+    "webaudio",
+    "webgpu",
+    "webxr",
+    "canvas",
+    "svg",
+    "html5"
+  ],
+  "version": "1.0.3",
+  "description": "Engine/framework for three.js",
   "main": "./build/three-engine.min.js",
-  "type": "module",
   "module": "./build/three-engine.module.js",
   "exports": {
     ".": {
@@ -25,10 +44,10 @@
   ],
   "scripts": {
     "start": "npm run dev",
-    "dev": "cdir build && webpack build --mode production --env module && webpack-dev-server --mode production --env module",
-    "explorer": "servez -p 8080 --ssl --hidden --no-index",
-    "build": "cdir build && webpack build --mode production --env module",
-    "build-dev": "cdir build && webpack build --mode development --env module",
+    "dev": "npm run build && npm run explorer",
+    "explorer": "servez --hidden --no-index",
+    "example": "http-server . -o /examples/example.html",
+    "build": "cdir build && webpack build --config webpack.module.prod.js --env min && webpack build --config webpack.module.prod.js --env js && webpack build --config webpack.module.prod.js --env module && webpack build --config webpack.module.prod.js --env cjs",
     "lint": "eslint src --ext js",
     "lint-fix": "eslint src --ext js --fix"
   },
@@ -37,18 +56,27 @@
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
     "clear-directory": "^1.0.7",
     "css-loader": "^6.7.2",
+    "cssnano": "^5.1.14",
     "eslint": "^8.28.0",
+    "eslint-plugin-react": "^7.31.11",
     "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
+    "mini-css-extract-plugin": "^2.7.1",
+    "postcss-loader": "^7.0.1",
+    "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "servez": "^1.14.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^5.0.0",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "three": "^0.146.0"

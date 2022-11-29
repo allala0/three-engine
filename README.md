@@ -1,6 +1,6 @@
 <h1 align="center"><b>three-engine</b></h1>
 <p align="center">
-    <img src="https://global.discourse-cdn.com/standard17/uploads/threejs/optimized/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751_2_1016x1024.png" style="width: 40%;">
+    <img src="https://global.discourse-cdn.com/standard17/uploads/threejs/optimized/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751_2_1016x1024.png" style="width: 200px;">
 </p>
 <br>
 
@@ -13,6 +13,7 @@ three-engine is framework/engine for three.js.
     npm install three-engine
 
 ## How to use
+    import * as THREE from 'three-engine';
     import ThreeEngine from 'three-engine';
     new ThreeEngine({
         callbacks: {
