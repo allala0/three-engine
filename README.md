@@ -41,7 +41,7 @@ To run example:
     git clone https://github.com/allala0/three-engine.git
     cd three-engine
     npm install
-    npm start
+    npm run example
 
 ## TODO
 - [ ] **Export all tools in ThreeEngine**
