@@ -325,6 +325,9 @@ external_three_namespaceObject.Object3D.prototype.setupClickable = function () {
   this.onClick = function () {};
   this.onRightClick = function () {};
   this.onWheelClick = function () {};
+  this.onHover = function () {};
+  this.onHoverUpdate = function () {};
+  this.onHoverEnd = function () {};
 };
 ;// CONCATENATED MODULE: ./src/tools/functions/WindowFunctions.js
 /*
@@ -1833,7 +1836,6 @@ https://www.fiverr.com/arturbrytkowski
 
 var ThreeEngine = /*#__PURE__*/function () {
   function ThreeEngine() {
-    var _this = this;
     var parameters = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     three_engine_classCallCheck(this, ThreeEngine);
     this.parameters = parameters;
@@ -1913,10 +1915,11 @@ var ThreeEngine = /*#__PURE__*/function () {
     if (this.enableGui) this.addGui();
     if (this.enablePostprocessing) this.addPostProcessing();
     if (this.enableTestLights) this.addTestLights();
-    if (this.init) (function () {
-      _this.init(_this);
-      _this.inited = true;
-    });
+    if (this.init) {
+      this.init(this);
+      this.inited = true;
+    }
+    ;
     this.GameLoop();
   }
   three_engine_createClass(ThreeEngine, [{
@@ -2149,10 +2152,10 @@ var ThreeEngine = /*#__PURE__*/function () {
   }, {
     key: "GameLoop",
     value: function GameLoop() {
-      var _this2 = this;
+      var _this = this;
       if (this.enableStats) this.stats.begin();
       requestAnimationFrame(function () {
-        return _this2.GameLoop();
+        return _this.GameLoop();
       });
       if (this.resizeCheck()) this._onResize();
       this.renderScene();
@@ -2181,7 +2184,7 @@ var ThreeEngine = /*#__PURE__*/function () {
   }, {
     key: "addCameraTransition",
     value: function addCameraTransition() {
-      var _this3 = this;
+      var _this2 = this;
       this.camera.up.copy(external_three_namespaceObject.Object3D.DefaultUp);
       this._cameraUp.copy(external_three_namespaceObject.Object3D.DefaultUp);
       if (this.enableControls && this.controls.enabled && this.controls.target) {
@@ -2203,12 +2206,12 @@ var ThreeEngine = /*#__PURE__*/function () {
         duration: this.cameraTransitionDuration,
         "function": this.cameraTransitionFunction,
         callbackEveryUpdate: function callbackEveryUpdate() {
-          _this3.camera.position.copy(_this3._cameraPosition);
-          _this3.camera.up.copy(_this3._cameraUp);
-          _this3.camera.lookAt(_this3._cameraLookAt);
-          _this3.camera.zoom = _this3._cameraZoom;
-          if (_this3.enableControls && _this3.controls.target) _this3.controls.target.copy(_this3._cameraLookAt);
-          _this3.camera.updateProjectionMatrix();
+          _this2.camera.position.copy(_this2._cameraPosition);
+          _this2.camera.up.copy(_this2._cameraUp);
+          _this2.camera.lookAt(_this2._cameraLookAt);
+          _this2.camera.zoom = _this2._cameraZoom;
+          if (_this2.enableControls && _this2.controls.target) _this2.controls.target.copy(_this2._cameraLookAt);
+          _this2.camera.updateProjectionMatrix();
         }
       });
     }
@@ -2297,6 +2300,7 @@ var ThreeEngine = /*#__PURE__*/function () {
       try {
         for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
           var object = _step3.value;
+          var lastIsHovered = object.isHovered;
           if (object.isClickDisabled) {
             object.isHovered = false;
             object.isLeftClicked = object.isRightClicked = object.isWheelClicked = false;
@@ -2319,6 +2323,14 @@ var ThreeEngine = /*#__PURE__*/function () {
           }
           var clickableObject = object.clickableObject !== undefined ? object.clickableObject : object;
           object.isHovered = !isHovered && clickableObject.hoverCheck(this.mouse, this.camera);
+          if (object.isHovered) {
+            if (!lastIsHovered) {
+              object.onHover();
+            }
+            object.onHoverUpdate();
+          } else if (lastIsHovered) {
+            object.onHoverEnd();
+          }
           if (!object.isHovered) object.isPressed = false;
           if (object.isHovered) isHovered = true;
         }
@@ -2567,56 +2579,56 @@ var ThreeEngine = /*#__PURE__*/function () {
   }, {
     key: "addEventListeners",
     value: function addEventListeners() {
-      var _this4 = this;
+      var _this3 = this;
       this.domElement.addEventListener('mousemove', function (event) {
-        if (_this4.enableControls && _this4.controls.enabled && _this4.isMouseDown) _this4.cameraTransition = null;
-        _this4._onMouseMove(event, _this4);
-        if (_this4.onMouseMove) _this4.onMouseMove(event, _this4);
+        if (_this3.enableControls && _this3.controls.enabled && _this3.isMouseDown) _this3.cameraTransition = null;
+        _this3._onMouseMove(event, _this3);
+        if (_this3.onMouseMove) _this3.onMouseMove(event, _this3);
       });
       this.domElement.addEventListener('mousedown', function (event) {
-        if (_this4.enableControls && _this4.controls.enabled) _this4.cameraTransition = null;
-        if (_this4.enableControls && _this4.controlsType === 'pointerlock') _this4.controls.lock();
-        _this4.isMouseDown = true;
-        if (_this4.onMouseDown) _this4.onMouseDown(event, _this4);
-        _this4.handleClickableObjectsClick(event);
-        if (_this4.enableAutoFullscreenOnMobile) _this4.requestFullscreen();
+        if (_this3.enableControls && _this3.controls.enabled) _this3.cameraTransition = null;
+        if (_this3.enableControls && _this3.controlsType === 'pointerlock') _this3.controls.lock();
+        _this3.isMouseDown = true;
+        if (_this3.onMouseDown) _this3.onMouseDown(event, _this3);
+        _this3.handleClickableObjectsClick(event);
+        if (_this3.enableAutoFullscreenOnMobile) _this3.requestFullscreen();
       }, false);
       this.domElement.addEventListener('mouseup', function (event) {
-        _this4.isMouseDown = false;
-        if (_this4.onMouseUp) _this4.onMouseUp(event, _this4);
-        _this4.handleClickableObjectsMouseUp();
+        _this3.isMouseDown = false;
+        if (_this3.onMouseUp) _this3.onMouseUp(event, _this3);
+        _this3.handleClickableObjectsMouseUp();
       });
       this.domElement.addEventListener('touchstart', function (event) {
-        if (_this4.enableControls && _this4.controls.enabled) _this4.cameraTransition = null;
-        if (event.touches && event.touches.length > 0) _this4._onMouseMove({
+        if (_this3.enableControls && _this3.controls.enabled) _this3.cameraTransition = null;
+        if (event.touches && event.touches.length > 0) _this3._onMouseMove({
           clientX: event.touches[0].clientX,
           clientY: event.touches[0].clientY
         });
-        if (_this4.onTouchStart) _this4.onTouchStart(event, _this4, _this4.lastTouch);
-        if (event.touches && event.touches.length > 0) _this4.lastTouch = event.touches[0];
-        if (_this4.enableAutoFullscreenOnMobile) _this4.requestFullscreen();
+        if (_this3.onTouchStart) _this3.onTouchStart(event, _this3, _this3.lastTouch);
+        if (event.touches && event.touches.length > 0) _this3.lastTouch = event.touches[0];
+        if (_this3.enableAutoFullscreenOnMobile) _this3.requestFullscreen();
       });
       this.domElement.addEventListener('touchmove', function (event) {
-        if (event.touches && event.touches.length > 0) _this4._onMouseMove({
+        if (event.touches && event.touches.length > 0) _this3._onMouseMove({
           clientX: event.touches[0].clientX,
           clientY: event.touches[0].clientY
         });
-        if (_this4.onTouchMove) _this4.onTouchMove(event, _this4, _this4.lastTouch);
-        if (event.touches && event.touches.length > 0) _this4.lastTouch = event.touches[0];
+        if (_this3.onTouchMove) _this3.onTouchMove(event, _this3, _this3.lastTouch);
+        if (event.touches && event.touches.length > 0) _this3.lastTouch = event.touches[0];
       });
       this.domElement.addEventListener('touchend', function (event) {
-        if (_this4.onTouchEnd) _this4.onTouchEnd(event, _this4, _this4.lastTouch);
-        if (event.touches && event.touches.length > 0) _this4.lastTouch = event.touches[0];
+        if (_this3.onTouchEnd) _this3.onTouchEnd(event, _this3, _this3.lastTouch);
+        if (event.touches && event.touches.length > 0) _this3.lastTouch = event.touches[0];
       });
       this.domElement.addEventListener('wheel', function (event) {
-        if (_this4.enableControls && _this4.controls.enabled) _this4.cameraTransition = null;
-        if (_this4.onWheel) _this4.onWheel(event, _this4);
+        if (_this3.enableControls && _this3.controls.enabled) _this3.cameraTransition = null;
+        if (_this3.onWheel) _this3.onWheel(event, _this3);
       });
       this.domElement.addEventListener('scroll', function (event) {
-        if (_this4.onScroll) _this4.onScroll(event, _this4);
+        if (_this3.onScroll) _this3.onScroll(event, _this3);
       });
       this.domElement.addEventListener('keydown', function (event) {
-        if (_this4.onKeydown) _this4.onKeydown(event, _this4);
+        if (_this3.onKeydown) _this3.onKeydown(event, _this3);
       });
       if (this.disableContextMenu) this.domElement.addEventListener('contextmenu', function (event) {
         return event.preventDefault();
@@ -2678,11 +2690,11 @@ var ThreeEngine = /*#__PURE__*/function () {
     key: "addDebugGuiFields",
     value: function addDebugGuiFields() {
       var _this$gui2,
-        _this5 = this;
+        _this4 = this;
       var debugFolder = (_this$gui2 = this.gui) === null || _this$gui2 === void 0 ? void 0 : _this$gui2.addFolder('Debug');
       debugFolder.add({
         promptRendererInfo: function promptRendererInfo() {
-          return console.log(_this5.renderer.info);
+          return console.log(_this4.renderer.info);
         }
       }, 'promptRendererInfo').name('Prompt renderer info');
       debugFolder.add(this, 'addCameraTransition').name('Add camera transition');

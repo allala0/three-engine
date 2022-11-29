@@ -143,7 +143,7 @@ class ThreeEngine{
 
         if(this.enableTestLights) this.addTestLights();
 
-        if(this.init) () => {
+        if(this.init){
             this.init(this); this.inited = true;
         };
 
@@ -504,6 +504,7 @@ class ThreeEngine{
     updateClickableObjects(){
         let isHovered = false;
         for(const object of this.clickableObjects){
+            const lastIsHovered = object.isHovered;
             if(object.isClickDisabled){
                 object.isHovered = false;
                 object.isLeftClicked = object.isRightClicked = object.isWheelClicked = false;
@@ -514,17 +515,31 @@ class ThreeEngine{
             }
 
             if(object.isLeftClickNeedCallback){
-                object.isLeftClickNeedCallback = false; object.onClick();
+                object.isLeftClickNeedCallback = false; 
+                object.onClick();
             }
             if(object.isRightClickNeedCallback){
-                object.isRightClickNeedCallback = false; object.onRightClick();
+                object.isRightClickNeedCallback = false; 
+                object.onRightClick();
             }
             if(object.isWheelClickNeedCallback){
-                object.isWheelClickNeedCallback = false; object.onWheelClick();
+                object.isWheelClickNeedCallback = false; 
+                object.onWheelClick();
             }
 
             const clickableObject = object.clickableObject !== undefined ? object.clickableObject : object;
             object.isHovered = !isHovered && clickableObject.hoverCheck(this.mouse, this.camera);
+
+            if(object.isHovered){
+                if(!lastIsHovered){
+                    object.onHover();
+                }
+                object.onHoverUpdate();
+            }
+            else if(lastIsHovered){
+                object.onHoverEnd();
+            }
+
             if(!object.isHovered) object.isPressed = false;
             if(object.isHovered) isHovered = true;
         }

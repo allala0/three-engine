@@ -1,6 +1,7 @@
 {
   "name": "three-engine",
-  "version": "1.0.0",
+  "keywords": ["three-engine", "three.js", "engine", "three", "js", "javascript", "framework", "three", "3d", "virtual-reality", "augmented-reality", "webgl", "webgl2", "webaudio", "webgpu", "webxr", "canvas", "svg", "html5"],
+  "version": "1.0.1",
   "description": "Engine for three.js",
   "main": "./build/three-engine.min.js",
   "type": "module",
@@ -12,9 +13,20 @@
     },
     "./tools/*": "./src/tools/*"
   },
+  "files": [
+    "build/three-engine.js",
+    "build/three-engine.cjs",
+    "build/three-engine.min.js",
+    "build/three-engine.module.js",
+    "LICENSE.md",
+    "package.json",
+    "README.md",
+    "examples",
+    "src"
+  ],
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack-dev-server --mode development --open --hot",
+    "dev": "cdir build && webpack build --mode production --env module && webpack-dev-server --mode production --env module",
     "explorer": "servez -p 8080 --ssl --hidden --no-index",
     "build": "cdir build && webpack build --mode production --env module",
     "build-dev": "cdir build && webpack build --mode development --env module",

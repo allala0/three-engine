@@ -335,4 +335,8 @@ Object3D.prototype.setupClickable = function(clickableObject=undefined){
     this.onRightClick = () => {};
     this.onWheelClick = () => {};
 
+    this.onHover = () => {};
+    this.onHoverUpdate = () => {};
+    this.onHoverEnd = () => {};
+
 };

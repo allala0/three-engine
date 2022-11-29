@@ -12,49 +12,58 @@ const BUILD_AS_MODULE = process.argv.indexOf('module') > -1;
 
 module.exports = (env, argv) => {
     const IS_DEVELOPMENT = argv.mode === 'development';
+    const BUILD_FOR_DEV_SERVER = process.argv.indexOf('serve') > -1;
+    console.log(BUILD_FOR_DEV_SERVER)
 
-    const commonConfig = {
-        externals: [
-            {three: 'three'},
-            /^three\/addons\//,
-        ],
-        devServer: {
-            magicHtml: true,
-            historyApiFallback: true,
-         },
-        ...(USE_SOURCE_MAP_IN_DEVELOPMENT && IS_DEVELOPMENT ? {devtool: 'source-map'} : {}),
-        module: {
-            rules: [
-                {
-                    test: /\.css$/,
-                    use: [
-                        'style-loader',
-                        'css-loader'
-                    ]
-                },
-                {
-                    test: /.(js|cjs|jsx)$/,
-                    exclude: /node_modules/,
-                    use: {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-env']
+    const commonConfig = () => {
+        return {
+            externals: [
+                {three: 'three'},
+                /^three\/addons\//,
+            ],
+            devServer: {
+                static: [{
+                    directory: path.resolve(__dirname, BUILD_AS_MODULE ? '' : BUILD_DIRECTORY)
+                }],
+                magicHtml: true,
+                historyApiFallback: true,
+                hot: true,
+                open: BUILD_AS_MODULE ? BUILD_FOR_DEV_SERVER ? ['/examples/example.html'] : false : true
+            },
+            ...(USE_SOURCE_MAP_IN_DEVELOPMENT && IS_DEVELOPMENT ? {devtool: 'source-map'} : {}),
+            module: {
+                rules: [
+                    {
+                        test: /\.css$/,
+                        use: [
+                            'style-loader',
+                            'css-loader'
+                        ]
+                    },
+                    {
+                        test: /.(js|cjs|jsx)$/,
+                        exclude: /node_modules/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/preset-env']
+                            }
                         }
+                    },
+                    {
+                        test: /\.s[ac]ss$/i,
+                        use: [
+                        "style-loader",
+                        "css-loader",
+                        "sass-loader",
+                        ],
+                    },
+                    {
+                        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                        type: 'asset/resource'
                     }
-                },
-                {
-                    test: /\.s[ac]ss$/i,
-                    use: [
-                      "style-loader",
-                      "css-loader",
-                      "sass-loader",
-                    ],
-                },
-                {
-                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                    type: 'asset/resource'
-                }
-            ]
+                ]
+            }
         }
     };
     
@@ -72,7 +81,7 @@ module.exports = (env, argv) => {
         if(type === 'js' || type === 'min.js') type = 'global';
     
         return {
-            ...commonConfig,
+            ...commonConfig(),
             ...(!BUILD_AS_MODULE ? {plugins: [
                 new HtmlWebpackPlugin({
                     title: 'webpack-app',
@@ -106,7 +115,7 @@ module.exports = (env, argv) => {
         }
     }
 
-    return BUILD_AS_MODULE ? [
+    return BUILD_AS_MODULE ? BUILD_FOR_DEV_SERVER ? getConfig('module') : [
         getConfig('min.js'),
         getConfig('module'),
         getConfig('js'),
