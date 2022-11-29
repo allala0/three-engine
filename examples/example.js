@@ -7,7 +7,6 @@ import * as THREE from 'three';
 import ThreeEngine from 'three-engine';
 import Texture from 'three-engine/tools/assets/Texture.js';
 import Json from 'three-engine/tools/assets/Json.js';
-import Sound from 'three-engine/tools/assets/Sound.js';
 import SpriteSheet from 'three-engine/tools/assets/SpriteSheet.js';
 import Font from 'three-engine/tools/assets/Font.js';
 
@@ -23,8 +22,6 @@ import transitionFunctions from 'three-engine/tools/transitions/transitionFuncti
 
 
 let box, transitionChain, animatedPlane;
-
-console.log(ThreeEngine)
 
 new ThreeEngine({
     domContainer: document.body, 
@@ -71,7 +68,6 @@ new ThreeEngine({
                 new Transition([
                     new TransitionObject(box.rotation, 'x', {1: Math.PI * 2})
                 ], {
-                    // function: transitionFunctions.easeInOutCubic,
                     duration: 1,
                     function: transitionFunctions.easeInOutCubic
                 }),
@@ -113,15 +109,11 @@ new ThreeEngine({
         update: threeEngine => {
         },
         updateLoaded: threeEngine => {
-            // if(box.isHovered) box.material.color.set(0xcccccc);
-            // else box.material.color.set(0xffffff);
-            // if(transitionChain.paused) transitionChain.reset().play();
             transitionChain.update();
             animatedPlane.material.update();
-            // console.log(box.rotation.x)
         },
         mouseDown: (event, threeEngine) => {
-            // transitionChain.reset().play()
+            console.log("Mouse down")
         }
     },
     setup: {
@@ -141,6 +133,5 @@ new ThreeEngine({
         spriteSheet: new SpriteSheet('./assets/img/spritesheet.png', new THREE.Vector2(3, 3)),
         json: new Json('./assets/json/json.json'),
         font: new Font('./assets/fonts/font.json'),
-        // font: new SpriteSheet('./assets/img/texture.png'),
     }
 });  

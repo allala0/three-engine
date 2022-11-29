@@ -21,7 +21,6 @@
     "LICENSE.md",
     "package.json",
     "README.md",
-    "examples",
     "src"
   ],
   "scripts": {

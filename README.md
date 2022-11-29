@@ -32,8 +32,15 @@ three-engine is framework/engine for three.js.
         }
     });
 
+## Example
+
 You can find example in <b>/examples/example.js</b>.
-To run example: <b>npm start</b>
+To run example:
+
+    git clone https://github.com/allala0/three-engine.git
+    cd three-engine
+    npm install
+    npm start
 
 ## TODO
 - [ ] **Export all tools in ThreeEngine**
