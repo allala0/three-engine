@@ -45,9 +45,9 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "npm run build && npm run explorer",
-    "explorer": "servez --hidden --no-index",
+    "explorer": "servez -p 8080 --ssl --hidden --no-index",
     "example": "http-server . -o /examples/example.html",
-    "build": "cdir build && webpack build --config webpack.module.prod.js --env min && webpack build --config webpack.module.prod.js --env js && webpack build --config webpack.module.prod.js --env module && webpack build --config webpack.module.prod.js --env cjs",
+    "build": "cdir build && webpack build --config webpack.prod.js --env min && webpack build --config webpack.prod.js --env js && webpack build --config webpack.prod.js --env module && webpack build --config webpack.prod.js --env cjs",
     "lint": "eslint src --ext js",
     "lint-fix": "eslint src --ext js --fix"
   },

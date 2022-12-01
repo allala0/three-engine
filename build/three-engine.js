@@ -70,24 +70,11 @@ window.isIOS = typeof navigator.standalone === 'boolean';
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -95,7 +82,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// CONCATENATED MODULE: external "THREE"
-const external_THREE_namespaceObject = self["THREE"];
+const external_THREE_namespaceObject = THREE;
 ;// CONCATENATED MODULE: ./src/tools/functions/ThreeFunctions.js
 /*
 Creator: Artur Brytkowski
@@ -8803,6 +8790,6 @@ setTextureQuality();
 /* harmony default export */ const three_engine = (ThreeEngine);
 })();
 
-self["three-engine"] = __webpack_exports__;
+Module = __webpack_exports__["default"];
 /******/ })()
 ;
