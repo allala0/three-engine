@@ -6,7 +6,7 @@ const ENTRY_EXT = 'js';
 
 const BUILD_DIRECTORY = 'build';
 
-const EXPORT_NAME = 'Module';
+const EXPORT_NAME = 'ThreeEngine';
 
 const type = process.argv.indexOf('js') > -1 ? 'js' : process.argv.indexOf('cjs') > -1 ? 'cjs' : process.argv.indexOf('module') > -1 ? 'module' : 'min'; // min, js, cjs, module
 const moduleType = type === 'module' ?  'module' : type === 'cjs' ? 'commonjs' : 'assign';
