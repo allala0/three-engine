@@ -1,5 +1,5 @@
 import {
-    Vector2
+	Vector2
 } from 'three';
 
 /**
@@ -12,14 +12,14 @@ import {
 
 const FXAAShader = {
 
-    uniforms: {
+	uniforms: {
 
-        'tDiffuse': { value: null },
-        'resolution': { value: new Vector2( 1 / 1024, 1 / 512 ) }
+		'tDiffuse': { value: null },
+		'resolution': { value: new Vector2( 1 / 1024, 1 / 512 ) }
 
-    },
+	},
 
-    vertexShader: /* glsl */`
+	vertexShader: /* glsl */`
 
 		varying vec2 vUv;
 
@@ -30,7 +30,7 @@ const FXAAShader = {
 
 		}`,
 
-    fragmentShader: `
+	fragmentShader: `
 	precision highp float;
 
 	uniform sampler2D tDiffuse;

@@ -1,93 +1,90 @@
 class WebGL {
 
-    static isWebGLAvailable() {
+	static isWebGLAvailable() {
 
-        try {
+		try {
 
-            const canvas = document.createElement( 'canvas' );
-            return !! ( window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );
+			const canvas = document.createElement( 'canvas' );
+			return !! ( window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );
 
-        }
-        catch ( e ) {
+		} catch ( e ) {
 
-            return false;
+			return false;
 
-        }
+		}
 
-    }
+	}
 
-    static isWebGL2Available() {
+	static isWebGL2Available() {
 
-        try {
+		try {
 
-            const canvas = document.createElement( 'canvas' );
-            return !! ( window.WebGL2RenderingContext && canvas.getContext( 'webgl2' ) );
+			const canvas = document.createElement( 'canvas' );
+			return !! ( window.WebGL2RenderingContext && canvas.getContext( 'webgl2' ) );
 
-        }
-        catch ( e ) {
+		} catch ( e ) {
 
-            return false;
+			return false;
 
-        }
+		}
 
-    }
+	}
 
-    static getWebGLErrorMessage() {
+	static getWebGLErrorMessage() {
 
-        return this.getErrorMessage( 1 );
+		return this.getErrorMessage( 1 );
 
-    }
+	}
 
-    static getWebGL2ErrorMessage() {
+	static getWebGL2ErrorMessage() {
 
-        return this.getErrorMessage( 2 );
+		return this.getErrorMessage( 2 );
 
-    }
+	}
 
-    static getErrorMessage( version ) {
+	static getErrorMessage( version ) {
 
-        const names = {
-            1: 'WebGL',
-            2: 'WebGL 2'
-        };
+		const names = {
+			1: 'WebGL',
+			2: 'WebGL 2'
+		};
 
-        const contexts = {
-            1: window.WebGLRenderingContext,
-            2: window.WebGL2RenderingContext
-        };
+		const contexts = {
+			1: window.WebGLRenderingContext,
+			2: window.WebGL2RenderingContext
+		};
 
-        let message = 'Your $0 does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">$1</a>';
+		let message = 'Your $0 does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">$1</a>';
 
-        const element = document.createElement( 'div' );
-        element.id = 'webglmessage';
-        element.style.fontFamily = 'monospace';
-        element.style.fontSize = '13px';
-        element.style.fontWeight = 'normal';
-        element.style.textAlign = 'center';
-        element.style.background = '#fff';
-        element.style.color = '#000';
-        element.style.padding = '1.5em';
-        element.style.width = '400px';
-        element.style.margin = '5em auto 0';
+		const element = document.createElement( 'div' );
+		element.id = 'webglmessage';
+		element.style.fontFamily = 'monospace';
+		element.style.fontSize = '13px';
+		element.style.fontWeight = 'normal';
+		element.style.textAlign = 'center';
+		element.style.background = '#fff';
+		element.style.color = '#000';
+		element.style.padding = '1.5em';
+		element.style.width = '400px';
+		element.style.margin = '5em auto 0';
 
-        if ( contexts[ version ] ) {
+		if ( contexts[ version ] ) {
 
-            message = message.replace( '$0', 'graphics card' );
+			message = message.replace( '$0', 'graphics card' );
 
-        }
-        else {
+		} else {
 
-            message = message.replace( '$0', 'browser' );
+			message = message.replace( '$0', 'browser' );
 
-        }
+		}
 
-        message = message.replace( '$1', names[ version ] );
+		message = message.replace( '$1', names[ version ] );
 
-        element.innerHTML = message;
+		element.innerHTML = message;
 
-        return element;
+		return element;
 
-    }
+	}
 
 }
 

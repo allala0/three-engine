@@ -5,13 +5,13 @@
 
 const GammaCorrectionShader = {
 
-    uniforms: {
+	uniforms: {
 
-        'tDiffuse': { value: null }
+		'tDiffuse': { value: null }
 
-    },
+	},
 
-    vertexShader: /* glsl */`
+	vertexShader: /* glsl */`
 
 		varying vec2 vUv;
 
@@ -22,7 +22,7 @@ const GammaCorrectionShader = {
 
 		}`,
 
-    fragmentShader: /* glsl */`
+	fragmentShader: /* glsl */`
 
 		uniform sampler2D tDiffuse;
 

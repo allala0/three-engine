@@ -34,7 +34,7 @@ module.exports = {
         ]
     },
     entry: {
-        [ENTRY_FILE]: path.resolve(__dirname, ENTRY_DIR, ENTRY_FILE + '.' + ENTRY_EXT)
+        [EXPORT_NAME]: path.resolve(__dirname, ENTRY_DIR, ENTRY_FILE + '.' + ENTRY_EXT)
     },
     output: {
         path: path.resolve(__dirname, BUILD_DIRECTORY),
