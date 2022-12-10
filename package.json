@@ -1,5 +1,6 @@
 {
   "name": "three-engine",
+  "side-effects": false,
   "keywords": [
     "three-engine",
     "three.js",
@@ -21,7 +22,7 @@
     "svg",
     "html5"
   ],
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Engine/framework for three.js",
   "main": "./build/three-engine.min.js",
   "module": "./build/three-engine.module.js",
