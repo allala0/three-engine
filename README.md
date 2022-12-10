@@ -4,10 +4,11 @@
 </p>
 <br>
 
-<h2>What is <b>three-engine</b>?</h2>
+## What is <b>three-engine</b>?
 three-engine is framework/engine for three.js.
-<br>
-<br>
+
+## Compatibility
+Complatible with three.js r.147
 
 ## How to install
     npm install three-engine
