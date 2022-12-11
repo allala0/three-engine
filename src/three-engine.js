@@ -26,8 +26,10 @@ import {
     Color
 } from 'three';
 
-import './tools/functions/ThreeFunctions.js';
-import './tools/functions/WindowFunctions.js';
+import initThreeFunctions from './tools/functions/ThreeFunctions.js';
+initThreeFunctions();
+import initWindowFunctions from './tools/functions/WindowFunctions.js';
+initWindowFunctions();
 
 import stylesheet from './assets/styles/stylesheet.js';
 

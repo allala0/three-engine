@@ -10,58 +10,8 @@ import * as __WEBPACK_EXTERNAL_MODULE_three_addons_controls_ArcballControls_js_e
 import * as __WEBPACK_EXTERNAL_MODULE_three_addons_libs_lil_gui_module_min_js_d0859151__ from "three/addons/libs/lil-gui.module.min.js";
 import * as __WEBPACK_EXTERNAL_MODULE_three_addons_libs_stats_module_js_b516c51e__ from "three/addons/libs/stats.module.js";
 import * as __WEBPACK_EXTERNAL_MODULE_three_addons_capabilities_WebGL_js_8a286a05__ from "three/addons/capabilities/WebGL.js";
-/******/ var __webpack_modules__ = ({
-
-/***/ 405:
-/***/ (() => {
-
-/*
-Creator: Artur Brytkowski
-https://www.fiverr.com/arturbrytkowski
-*/
-
-window.cursorPointer = function () {
-  return document.body.style.cursor = 'pointer';
-};
-window.cursorArrow = function () {
-  return document.body.style.cursor = 'default';
-};
-window.mobileCheck = function () {
-  var check = false;
-  (function (a) {
-    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
-  })(navigator.userAgent || navigator.vendor || window.opera);
-  return check;
-};
-window.isIOS = typeof navigator.standalone === 'boolean';
-
-/***/ })
-
-/******/ });
-/************************************************************************/
-/******/ // The module cache
-/******/ var __webpack_module_cache__ = {};
-/******/ 
-/******/ // The require function
-/******/ function __webpack_require__(moduleId) {
-/******/ 	// Check if module is in cache
-/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 	if (cachedModule !== undefined) {
-/******/ 		return cachedModule.exports;
-/******/ 	}
-/******/ 	// Create a new module (and put it into the cache)
-/******/ 	var module = __webpack_module_cache__[moduleId] = {
-/******/ 		// no module.id needed
-/******/ 		// no module.loaded needed
-/******/ 		exports: {}
-/******/ 	};
-/******/ 
-/******/ 	// Execute the module function
-/******/ 	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 
-/******/ 	// Return the exports of the module
-/******/ 	return module.exports;
-/******/ }
+/******/ // The require scope
+/******/ var __webpack_require__ = {};
 /******/ 
 /************************************************************************/
 /******/ /* webpack/runtime/define property getters */
@@ -83,8 +33,6 @@ window.isIOS = typeof navigator.standalone === 'boolean';
 /******/ 
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -102,287 +50,311 @@ https://www.fiverr.com/arturbrytkowski
 */
 
 
-Number.prototype.clone = function () {
-  return this;
-};
-Number.prototype.moveTo = function (to, amount) {
-  var from = this;
-  var relNumber = to - from;
-  var newNumber = from + relNumber * amount;
-  return newNumber;
-};
-external_three_namespaceObject.Color.prototype.moveTo = function (to, amount) {
-  var r = this.r.moveTo(to.r, amount);
-  var g = this.g.moveTo(to.g, amount);
-  var b = this.b.moveTo(to.b, amount);
-  return new external_three_namespaceObject.Color(r, g, b);
-};
-external_three_namespaceObject.Vector2.prototype.moveTo = function (to, amount) {
-  var from = this;
-  var relVector = new external_three_namespaceObject.Vector2(to.x - from.x, to.y - from.y);
-  return new external_three_namespaceObject.Vector2(from.x + relVector.x * amount, from.y + relVector.y * amount);
-};
-external_three_namespaceObject.Vector3.prototype.moveTo = function (to, amount) {
-  var from = this;
-  var relVector = new external_three_namespaceObject.Vector3(to.x - from.x, to.y - from.y, to.z - from.z);
-  return new external_three_namespaceObject.Vector3(from.x + relVector.x * amount, from.y + relVector.y * amount, from.z + relVector.z * amount);
-};
-external_three_namespaceObject.Vector4.prototype.moveTo = function (to, amount) {
-  var from = this;
-  var relVector = new external_three_namespaceObject.Vector4(to.x - from.x, to.y - from.y, to.z - from.z, to.w - from.w);
-  return new external_three_namespaceObject.Vector3(from.x + relVector.x * amount, from.y + relVector.y * amount, from.z + relVector.z * amount, from.w + relVector.w * amount);
-};
-external_three_namespaceObject.Euler.prototype.moveTo = function (to, amount) {
-  var from = this;
-  var relVector = new external_three_namespaceObject.Vector3(to.x - from.x, to.y - from.y, to.z - from.z);
-  return new external_three_namespaceObject.Euler(from.x + relVector.x * amount, from.y + relVector.y * amount, from.z + relVector.z * amount, from.order);
-};
-external_three_namespaceObject.Object3D.prototype.getSurface = function () {
-  var surface = 0;
-  this.traverse(function (object) {
-    if (object.isMesh && object.geometry && object.geometry.isBufferGeometry) {
-      var geometry = object.geometry;
-      var face = new external_three_namespaceObject.Triangle();
-      var index = geometry.getIndex();
-      if (index) {
-        for (var i = 0; i < index.count; i += 3) {
-          face.a.fromBufferAttribute(geometry.attributes.position, index.getX(i));
-          face.b.fromBufferAttribute(geometry.attributes.position, index.getX(i + 1));
-          face.c.fromBufferAttribute(geometry.attributes.position, index.getX(i + 2));
-          surface += face.getArea();
-        }
-      } else {
-        for (var _i = 0; _i < geometry.attributes.position.count; _i += 3) {
-          face.a.fromBufferAttribute(geometry.attributes.position, _i);
-          face.b.fromBufferAttribute(geometry.attributes.position, _i + 1);
-          face.c.fromBufferAttribute(geometry.attributes.position, _i + 2);
-          surface += face.getArea();
-        }
-      }
-    }
-  });
-  return surface;
-};
-external_three_namespaceObject.Object3D.prototype.getVolume = function () {
-  var volume = 0;
-  var signedVolumeOfTriangle = function signedVolumeOfTriangle(p1, p2, p3) {
-    return p1.dot(p2.cross(p3)) / 6.0;
+function init() {
+  Number.prototype.clone = function () {
+    return this;
   };
-  this.traverse(function (object) {
-    if (object.isMesh && object.geometry && object.geometry.isBufferGeometry) {
-      var geometry = object.geometry;
-      var isIndexed = geometry.index !== null;
-      var position = geometry.attributes.position;
-      var p1 = new external_three_namespaceObject.Vector3(),
-        p2 = new external_three_namespaceObject.Vector3(),
-        p3 = new external_three_namespaceObject.Vector3();
-      if (!isIndexed) {
-        var faces = position.count / 3;
-        for (var i = 0; i < faces; i++) {
-          p1.fromBufferAttribute(position, i * 3 + 0);
-          p2.fromBufferAttribute(position, i * 3 + 1);
-          p3.fromBufferAttribute(position, i * 3 + 2);
-          volume += Math.abs(signedVolumeOfTriangle(p1, p2, p3));
+  Number.prototype.moveTo = function (to, amount) {
+    var from = this;
+    var relNumber = to - from;
+    var newNumber = from + relNumber * amount;
+    return newNumber;
+  };
+  external_three_namespaceObject.Color.prototype.moveTo = function (to, amount) {
+    var r = this.r.moveTo(to.r, amount);
+    var g = this.g.moveTo(to.g, amount);
+    var b = this.b.moveTo(to.b, amount);
+    return new external_three_namespaceObject.Color(r, g, b);
+  };
+  external_three_namespaceObject.Vector2.prototype.moveTo = function (to, amount) {
+    var from = this;
+    var relVector = new external_three_namespaceObject.Vector2(to.x - from.x, to.y - from.y);
+    return new external_three_namespaceObject.Vector2(from.x + relVector.x * amount, from.y + relVector.y * amount);
+  };
+  external_three_namespaceObject.Vector3.prototype.moveTo = function (to, amount) {
+    var from = this;
+    var relVector = new external_three_namespaceObject.Vector3(to.x - from.x, to.y - from.y, to.z - from.z);
+    return new external_three_namespaceObject.Vector3(from.x + relVector.x * amount, from.y + relVector.y * amount, from.z + relVector.z * amount);
+  };
+  external_three_namespaceObject.Vector4.prototype.moveTo = function (to, amount) {
+    var from = this;
+    var relVector = new external_three_namespaceObject.Vector4(to.x - from.x, to.y - from.y, to.z - from.z, to.w - from.w);
+    return new external_three_namespaceObject.Vector3(from.x + relVector.x * amount, from.y + relVector.y * amount, from.z + relVector.z * amount, from.w + relVector.w * amount);
+  };
+  external_three_namespaceObject.Euler.prototype.moveTo = function (to, amount) {
+    var from = this;
+    var relVector = new external_three_namespaceObject.Vector3(to.x - from.x, to.y - from.y, to.z - from.z);
+    return new external_three_namespaceObject.Euler(from.x + relVector.x * amount, from.y + relVector.y * amount, from.z + relVector.z * amount, from.order);
+  };
+  external_three_namespaceObject.Object3D.prototype.getSurface = function () {
+    var surface = 0;
+    this.traverse(function (object) {
+      if (object.isMesh && object.geometry && object.geometry.isBufferGeometry) {
+        var geometry = object.geometry;
+        var face = new external_three_namespaceObject.Triangle();
+        var index = geometry.getIndex();
+        if (index) {
+          for (var i = 0; i < index.count; i += 3) {
+            face.a.fromBufferAttribute(geometry.attributes.position, index.getX(i));
+            face.b.fromBufferAttribute(geometry.attributes.position, index.getX(i + 1));
+            face.c.fromBufferAttribute(geometry.attributes.position, index.getX(i + 2));
+            surface += face.getArea();
+          }
+        } else {
+          for (var _i = 0; _i < geometry.attributes.position.count; _i += 3) {
+            face.a.fromBufferAttribute(geometry.attributes.position, _i);
+            face.b.fromBufferAttribute(geometry.attributes.position, _i + 1);
+            face.c.fromBufferAttribute(geometry.attributes.position, _i + 2);
+            surface += face.getArea();
+          }
         }
-      } else {
-        var index = geometry.index;
-        var _faces = index.count / 3;
-        for (var _i2 = 0; _i2 < _faces; _i2++) {
-          p1.fromBufferAttribute(position, index.array[_i2 * 3 + 0]);
-          p2.fromBufferAttribute(position, index.array[_i2 * 3 + 1]);
-          p3.fromBufferAttribute(position, index.array[_i2 * 3 + 2]);
-          volume += Math.abs(signedVolumeOfTriangle(p1, p2, p3));
+      }
+    });
+    return surface;
+  };
+  external_three_namespaceObject.Object3D.prototype.getVolume = function () {
+    var volume = 0;
+    var signedVolumeOfTriangle = function signedVolumeOfTriangle(p1, p2, p3) {
+      return p1.dot(p2.cross(p3)) / 6.0;
+    };
+    this.traverse(function (object) {
+      if (object.isMesh && object.geometry && object.geometry.isBufferGeometry) {
+        var geometry = object.geometry;
+        var isIndexed = geometry.index !== null;
+        var position = geometry.attributes.position;
+        var p1 = new external_three_namespaceObject.Vector3(),
+          p2 = new external_three_namespaceObject.Vector3(),
+          p3 = new external_three_namespaceObject.Vector3();
+        if (!isIndexed) {
+          var faces = position.count / 3;
+          for (var i = 0; i < faces; i++) {
+            p1.fromBufferAttribute(position, i * 3 + 0);
+            p2.fromBufferAttribute(position, i * 3 + 1);
+            p3.fromBufferAttribute(position, i * 3 + 2);
+            volume += Math.abs(signedVolumeOfTriangle(p1, p2, p3));
+          }
+        } else {
+          var index = geometry.index;
+          var _faces = index.count / 3;
+          for (var _i2 = 0; _i2 < _faces; _i2++) {
+            p1.fromBufferAttribute(position, index.array[_i2 * 3 + 0]);
+            p2.fromBufferAttribute(position, index.array[_i2 * 3 + 1]);
+            p3.fromBufferAttribute(position, index.array[_i2 * 3 + 2]);
+            volume += Math.abs(signedVolumeOfTriangle(p1, p2, p3));
+          }
         }
       }
-    }
-  });
-  return volume;
-};
-external_three_namespaceObject.Object3D.prototype.getSize = function () {
-  var bbox = new external_three_namespaceObject.Box3();
-  bbox.setFromObject(this);
-  return new external_three_namespaceObject.Vector3(bbox.max.x - bbox.min.x, bbox.max.y - bbox.min.y, bbox.max.z - bbox.min.z);
-};
-external_three_namespaceObject.Object3D.prototype.centerGeometry = function () {
-  var centerPosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new external_three_namespaceObject.Vector3();
-  // not working properly
-  this.updateMatrix();
-  centerPosition = centerPosition.clone();
-  var bbox = new external_three_namespaceObject.Box3();
-  bbox.setFromObject(this);
-  var positionDelta = new external_three_namespaceObject.Vector3();
-  positionDelta.x -= (bbox.max.x + bbox.min.x) / 2;
-  positionDelta.y -= (bbox.max.y + bbox.min.y) / 2;
-  positionDelta.z -= (bbox.max.z + bbox.min.z) / 2;
-  this.traverse(function (object) {
-    if (object.isMesh && object.geometry && object.geometry.attributes && object.geometry.attributes.position && object.geometry.attributes.position.array) {
-      var position = object.geometry.attributes.position.array;
-      for (var i = 0; i < position.length; i += 3) {
-        position[i] += positionDelta.x;
-        position[i + 1] += positionDelta.y;
-        position[i + 2] += positionDelta.z;
+    });
+    return volume;
+  };
+  external_three_namespaceObject.Object3D.prototype.getSize = function () {
+    var bbox = new external_three_namespaceObject.Box3();
+    bbox.setFromObject(this);
+    return new external_three_namespaceObject.Vector3(bbox.max.x - bbox.min.x, bbox.max.y - bbox.min.y, bbox.max.z - bbox.min.z);
+  };
+  external_three_namespaceObject.Object3D.prototype.centerGeometry = function () {
+    var centerPosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new external_three_namespaceObject.Vector3();
+    // not working properly
+    this.updateMatrix();
+    centerPosition = centerPosition.clone();
+    var bbox = new external_three_namespaceObject.Box3();
+    bbox.setFromObject(this);
+    var positionDelta = new external_three_namespaceObject.Vector3();
+    positionDelta.x -= (bbox.max.x + bbox.min.x) / 2;
+    positionDelta.y -= (bbox.max.y + bbox.min.y) / 2;
+    positionDelta.z -= (bbox.max.z + bbox.min.z) / 2;
+    this.traverse(function (object) {
+      if (object.isMesh && object.geometry && object.geometry.attributes && object.geometry.attributes.position && object.geometry.attributes.position.array) {
+        var position = object.geometry.attributes.position.array;
+        for (var i = 0; i < position.length; i += 3) {
+          position[i] += positionDelta.x;
+          position[i + 1] += positionDelta.y;
+          position[i + 2] += positionDelta.z;
+        }
+        object.geometry.computeBoundingBox();
+        object.geometry.computeBoundingSphere();
+        object.updateMatrix();
       }
-      object.geometry.computeBoundingBox();
-      object.geometry.computeBoundingSphere();
-      object.updateMatrix();
-    }
-  });
-  this.updateMatrix();
-  return this;
-};
-external_three_namespaceObject.Object3D.prototype.center = function () {
-  var centerPosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new external_three_namespaceObject.Vector3();
-  var parent = this.parent;
-  this.removeFromParent();
-  this.updateMatrix();
-  centerPosition = centerPosition.clone();
-  this.position.copy(new external_three_namespaceObject.Vector3());
-  var bbox = new external_three_namespaceObject.Box3();
-  bbox.setFromObject(this);
-  this.position.x += -(bbox.max.x + bbox.min.x) / 2 + centerPosition.x;
-  this.position.y += -(bbox.max.y + bbox.min.y) / 2 + centerPosition.y;
-  this.position.z += -(bbox.max.z + bbox.min.z) / 2 + centerPosition.z;
-  if (parent !== null) parent.add(this);
-  this.updateMatrix();
-  this.traverse(function (object) {
-    if (object.geometry) {
-      object.geometry.computeBoundingBox();
-      object.geometry.computeBoundingSphere();
-    }
-  });
-  return this;
-};
-external_three_namespaceObject.Mesh.prototype.centerGeometry = function () {
-  var centerPosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new external_three_namespaceObject.Vector3();
-  this.updateMatrix();
-  centerPosition = centerPosition.clone();
-  var bbox = new external_three_namespaceObject.Box3();
-  bbox.setFromObject(this);
-  var positionDelta = new external_three_namespaceObject.Vector3();
-  positionDelta.x -= (bbox.max.x + bbox.min.x) / 2 + centerPosition.x;
-  positionDelta.y -= (bbox.max.y + bbox.min.y) / 2 + centerPosition.y;
-  positionDelta.z -= (bbox.max.z + bbox.min.z) / 2 + centerPosition.z;
-  var position = this.geometry.attributes.position.array;
-  for (var i = 0; i < position.length; i += 3) {
-    position[i] += positionDelta.x;
-    position[i + 1] += positionDelta.y;
-    position[i + 2] += positionDelta.z;
-  }
-  this.updateMatrix();
-  return this;
-};
-external_three_namespaceObject.Object3D.prototype.normalize = function () {
-  var axis = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'y';
-  this.setSize(1, axis);
-  return this;
-};
-external_three_namespaceObject.Object3D.prototype.setSize = function (size) {
-  var axis = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'y';
-  this.updateMatrix();
-  var bbox = new external_three_namespaceObject.Box3();
-  bbox.setFromObject(this);
-  var sizeOld = bbox.max[axis] - bbox.min[axis];
-  var newScale = size / sizeOld * this.scale[axis];
-  this.scale.copy(new external_three_namespaceObject.Vector3(newScale, newScale, newScale));
-  this.updateMatrix();
-  this.traverse(function (object) {
-    if (object.geometry) {
-      object.geometry.computeBoundingBox();
-      object.geometry.computeBoundingSphere();
-    }
-  });
-  return this;
-};
-external_three_namespaceObject.Object3D.prototype.hoverCheck = function (mouse, camera) {
-  var raycaster = new external_three_namespaceObject.Raycaster();
-  raycaster.setFromCamera(mouse, camera);
-  var intersection = raycaster.intersectObject(this);
-  if (intersection.length > 0) this.hoverDistance = intersection[0].distance;else this.hoverDistance = Infinity;
-  return intersection.length > 0;
-};
-external_three_namespaceObject.Object3D.prototype.dispose = function () {
-  var disposeTextures = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-  this.disposed = true;
-  this.removeFromParent();
-  this.traverse(function (object) {
-    if (object.isObject3D) {
-      if (object.geometry) object.geometry.dispose();
-      if (object.material) {
-        if (disposeTextures && object.material.map) object.material.map.dispose();
-        object.material.dispose();
+    });
+    this.updateMatrix();
+    return this;
+  };
+  external_three_namespaceObject.Object3D.prototype.center = function () {
+    var centerPosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new external_three_namespaceObject.Vector3();
+    var parent = this.parent;
+    this.removeFromParent();
+    this.updateMatrix();
+    centerPosition = centerPosition.clone();
+    this.position.copy(new external_three_namespaceObject.Vector3());
+    var bbox = new external_three_namespaceObject.Box3();
+    bbox.setFromObject(this);
+    this.position.x += -(bbox.max.x + bbox.min.x) / 2 + centerPosition.x;
+    this.position.y += -(bbox.max.y + bbox.min.y) / 2 + centerPosition.y;
+    this.position.z += -(bbox.max.z + bbox.min.z) / 2 + centerPosition.z;
+    if (parent !== null) parent.add(this);
+    this.updateMatrix();
+    this.traverse(function (object) {
+      if (object.geometry) {
+        object.geometry.computeBoundingBox();
+        object.geometry.computeBoundingSphere();
       }
+    });
+    return this;
+  };
+  external_three_namespaceObject.Mesh.prototype.centerGeometry = function () {
+    var centerPosition = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new external_three_namespaceObject.Vector3();
+    this.updateMatrix();
+    centerPosition = centerPosition.clone();
+    var bbox = new external_three_namespaceObject.Box3();
+    bbox.setFromObject(this);
+    var positionDelta = new external_three_namespaceObject.Vector3();
+    positionDelta.x -= (bbox.max.x + bbox.min.x) / 2 + centerPosition.x;
+    positionDelta.y -= (bbox.max.y + bbox.min.y) / 2 + centerPosition.y;
+    positionDelta.z -= (bbox.max.z + bbox.min.z) / 2 + centerPosition.z;
+    var position = this.geometry.attributes.position.array;
+    for (var i = 0; i < position.length; i += 3) {
+      position[i] += positionDelta.x;
+      position[i + 1] += positionDelta.y;
+      position[i + 2] += positionDelta.z;
     }
-  });
-};
-external_three_namespaceObject.Object3D.prototype.setupClickable = function () {
-  var clickableObject = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
-  this.clickableObject = clickableObject;
-  this.isClickDisabled = false;
-  this.isClickable = true;
-  this.isHovered = false;
-  this.isLeftClicked = false;
-  this.isWheelClicked = false;
-  this.isRightClicked = false;
-  this.__defineGetter__('isClicked', function () {
-    return this.isRightClicked || this.isLeftClicked || this.isWheelClicked;
-  });
-  this.isPressed = false;
-  this.__defineGetter__('isLeftPressed', function () {
-    return this.isPressed && this.isLeftClicked;
-  });
-  this.__defineGetter__('isRightPressed', function () {
-    return this.isPressed && this.isRightClicked;
-  });
-  this.__defineGetter__('isWheelPressed', function () {
-    return this.isPressed && this.isWheelClicked;
-  });
-  this.isDragged = false;
-  this.__defineGetter__('isLeftDragged', function () {
-    return this.isDragged && this.isLeftClicked;
-  });
-  this.__defineGetter__('isRightDragged', function () {
-    return this.isDragged && this.isRightClicked;
-  });
-  this.__defineGetter__('isWheelDragged', function () {
-    return this.isDragged && this.isWheelClicked;
-  });
-  this.hoverDistance = Infinity;
-  this._isLeftClickNeedCallback = false;
-  this._isRightClickNeedCallback = false;
-  this._isWheelClickNeedCallback = false;
-  this.__defineGetter__('isLeftClickNeedCallback', function () {
-    var val = this._isLeftClickNeedCallback;
+    this.updateMatrix();
+    return this;
+  };
+  external_three_namespaceObject.Object3D.prototype.normalize = function () {
+    var axis = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'y';
+    this.setSize(1, axis);
+    return this;
+  };
+  external_three_namespaceObject.Object3D.prototype.setSize = function (size) {
+    var axis = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'y';
+    this.updateMatrix();
+    var bbox = new external_three_namespaceObject.Box3();
+    bbox.setFromObject(this);
+    var sizeOld = bbox.max[axis] - bbox.min[axis];
+    var newScale = size / sizeOld * this.scale[axis];
+    this.scale.copy(new external_three_namespaceObject.Vector3(newScale, newScale, newScale));
+    this.updateMatrix();
+    this.traverse(function (object) {
+      if (object.geometry) {
+        object.geometry.computeBoundingBox();
+        object.geometry.computeBoundingSphere();
+      }
+    });
+    return this;
+  };
+  external_three_namespaceObject.Object3D.prototype.hoverCheck = function (mouse, camera) {
+    var raycaster = new external_three_namespaceObject.Raycaster();
+    raycaster.setFromCamera(mouse, camera);
+    var intersection = raycaster.intersectObject(this);
+    if (intersection.length > 0) this.hoverDistance = intersection[0].distance;else this.hoverDistance = Infinity;
+    return intersection.length > 0;
+  };
+  external_three_namespaceObject.Object3D.prototype.dispose = function () {
+    var disposeTextures = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+    this.disposed = true;
+    this.removeFromParent();
+    this.traverse(function (object) {
+      if (object.isObject3D) {
+        if (object.geometry) object.geometry.dispose();
+        if (object.material) {
+          if (disposeTextures && object.material.map) object.material.map.dispose();
+          object.material.dispose();
+        }
+      }
+    });
+  };
+  external_three_namespaceObject.Object3D.prototype.setupClickable = function () {
+    var clickableObject = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+    this.clickableObject = clickableObject;
+    this.isClickDisabled = false;
+    this.isClickable = true;
+    this.isHovered = false;
+    this.isLeftClicked = false;
+    this.isWheelClicked = false;
+    this.isRightClicked = false;
+    this.__defineGetter__('isClicked', function () {
+      return this.isRightClicked || this.isLeftClicked || this.isWheelClicked;
+    });
+    this.isPressed = false;
+    this.__defineGetter__('isLeftPressed', function () {
+      return this.isPressed && this.isLeftClicked;
+    });
+    this.__defineGetter__('isRightPressed', function () {
+      return this.isPressed && this.isRightClicked;
+    });
+    this.__defineGetter__('isWheelPressed', function () {
+      return this.isPressed && this.isWheelClicked;
+    });
+    this.isDragged = false;
+    this.__defineGetter__('isLeftDragged', function () {
+      return this.isDragged && this.isLeftClicked;
+    });
+    this.__defineGetter__('isRightDragged', function () {
+      return this.isDragged && this.isRightClicked;
+    });
+    this.__defineGetter__('isWheelDragged', function () {
+      return this.isDragged && this.isWheelClicked;
+    });
+    this.hoverDistance = Infinity;
     this._isLeftClickNeedCallback = false;
-    return val;
-  });
-  this.__defineGetter__('isRightClickNeedCallback', function () {
-    var val = this._isRightClickNeedCallback;
     this._isRightClickNeedCallback = false;
-    return val;
-  });
-  this.__defineGetter__('isWheelClickNeedCallback', function () {
-    var val = this._isWheelClickNeedCallback;
     this._isWheelClickNeedCallback = false;
-    return val;
-  });
-  this.__defineSetter__('isLeftClickNeedCallback', function (val) {
-    this._isLeftClickNeedCallback = val;
-  });
-  this.__defineSetter__('isRightClickNeedCallback', function (val) {
-    this._isRightClickNeedCallback = val;
-  });
-  this.__defineSetter__('isWheelClickNeedCallback', function (val) {
-    this._isWheelClickNeedCallback = val;
-  });
-  this.onClick = function () {};
-  this.onRightClick = function () {};
-  this.onWheelClick = function () {};
-  this.onHover = function () {};
-  this.onHoverUpdate = function () {};
-  this.onHoverEnd = function () {};
-};
-// EXTERNAL MODULE: ./src/tools/functions/WindowFunctions.js
-var WindowFunctions = __webpack_require__(405);
+    this.__defineGetter__('isLeftClickNeedCallback', function () {
+      var val = this._isLeftClickNeedCallback;
+      this._isLeftClickNeedCallback = false;
+      return val;
+    });
+    this.__defineGetter__('isRightClickNeedCallback', function () {
+      var val = this._isRightClickNeedCallback;
+      this._isRightClickNeedCallback = false;
+      return val;
+    });
+    this.__defineGetter__('isWheelClickNeedCallback', function () {
+      var val = this._isWheelClickNeedCallback;
+      this._isWheelClickNeedCallback = false;
+      return val;
+    });
+    this.__defineSetter__('isLeftClickNeedCallback', function (val) {
+      this._isLeftClickNeedCallback = val;
+    });
+    this.__defineSetter__('isRightClickNeedCallback', function (val) {
+      this._isRightClickNeedCallback = val;
+    });
+    this.__defineSetter__('isWheelClickNeedCallback', function (val) {
+      this._isWheelClickNeedCallback = val;
+    });
+    this.onClick = function () {};
+    this.onRightClick = function () {};
+    this.onWheelClick = function () {};
+    this.onHover = function () {};
+    this.onHoverUpdate = function () {};
+    this.onHoverEnd = function () {};
+  };
+}
+/* harmony default export */ const ThreeFunctions = (init);
+;// CONCATENATED MODULE: ./src/tools/functions/WindowFunctions.js
+/*
+Creator: Artur Brytkowski
+https://www.fiverr.com/arturbrytkowski
+*/
+
+function WindowFunctions_init() {
+  window.cursorPointer = function () {
+    return document.body.style.cursor = 'pointer';
+  };
+  window.cursorArrow = function () {
+    return document.body.style.cursor = 'default';
+  };
+  window.mobileCheck = function () {
+    var check = false;
+    (function (a) {
+      if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+    })(navigator.userAgent || navigator.vendor || window.opera);
+    return check;
+  };
+  window.isIOS = typeof navigator.standalone === 'boolean';
+}
+/* harmony default export */ const WindowFunctions = (WindowFunctions_init);
 ;// CONCATENATED MODULE: ./src/assets/styles/stylesheet.js
 var stylesheet = /* css */"\n:root{ \n  --DPR: 1;\n}\n\n.loadingCircle{\n  --size: calc(min(20vh, 20vw) / var(--DPR));\n  --border-width: calc(min(2vh, 2vw) / var(--DPR));\n\n  border: 10px solid #777777;\n  border-top: 10px solid #fff;\n  border-width: var(--border-width);\n  border-radius: 50%;\n  width: var(--size);\n  height: var(--size);\n  /* padding-top: var(--size); */\n  animation: loadingSpin 1s linear infinite;\n  position: absolute;\n  left: calc(50% - var(--size) / 2 - var(--border-width));\n  top: calc(50% - var(--size) / 2 - var(--border-width));\n  /* box-sizing: border-box; */\n  z-index: 50001;\n}\n\n.loadingBar{\n  width: 60vw;\n  height: 4vw;\n  left: calc(50vw - 60vw / 2);\n  top: calc(50vh - 4vw / 2);\n  position: absolute;\n  border: 3px solid white;\n  border-width: calc(3px / var(--DPR));\n  box-sizing: border-box;\n}\n\n.loadingBarProgress{\n  background-color: white;\n  height: 100%;\n}\n\n.loadingScreen{\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  position: absolute;\n  background-color: #000;\n  z-index: 50000;\n}\n\n.hidden{\n  display: none;\n}\n\n@keyframes loadingSpin{\n  0%{ transform: rotate(0deg); }\n  100%{ transform: rotate(360deg); }\n}\n\n*:focus{\n  outline: none;\n}\n  \n::-moz-selection{background: rgba(0,0,0,0);}\n::selection{background: rgba(0,0,0,0);}\n::-webkit-selection{background: rgba(0,0,0,0);}\n:not(input){\n  -webkit-tap-highlight-color:  rgba(0,0,0,0); \n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n  \n::-webkit-scrollbar{\n  width: calc(10px / var(--DPR));\n  background-color: transparent;\n}\n::-webkit-scrollbar-track {\n  background-color: white;\n\n}\n::-webkit-scrollbar-thumb{\n  background-color: #aaa;\n  border-radius: calc(5px / var(--DPR));\n}\n::-webkit-scrollbar-thumb:hover{\n  background-color: #ccc;\n}\n  \ninput[type=number]::-webkit-inner-spin-button,\ninput[type=number]::-webkit-outer-spin-button{\n  -webkit-appearance: none; \n  margin: 0; \n  width: 0;\n  height: 0;\n  opacity: 0\n}\n  \ninput[type=number]{ \n  appearance: textfield;\n  margin: 0; \n}\n\ninput[type=\"number\"]{\n  appearance: none;\n}\n\ninput[type=\"number\"]:focus, \ninput[type=\"number\"]:hover{\n  appearance: auto;\n}\n\ninput::-webkit-outer-spin-button, input::-webkit-inner-spin-button{\n  -webkit-appearance: none !important;\n}\n\ninput[type=\"number\"]{\n  -moz-appearance: textfield;\n}\n";
 /* harmony default export */ const styles_stylesheet = (stylesheet);
@@ -1851,7 +1823,9 @@ https://www.fiverr.com/arturbrytkowski
 
 
 
+ThreeFunctions();
 
+WindowFunctions();
 
 
 
@@ -2764,7 +2738,5 @@ function setTextureQuality() {
 }
 setTextureQuality();
 /* harmony default export */ const three_engine = (ThreeEngine);
-})();
-
 var __webpack_exports__default = __webpack_exports__.Z;
 export { __webpack_exports__default as default };
