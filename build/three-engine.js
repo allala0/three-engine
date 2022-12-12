@@ -8740,25 +8740,26 @@ var ThreeEngine = /*#__PURE__*/function () {
   }, {
     key: "getTextureQuality",
     value: function getTextureQuality() {
-      var textureQualitySizes = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+      var maxTextureQuality = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var maxMobileTextureQuality = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var textureQualitySizes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+      if (textureQualitySizes == null) textureQualitySizes = {
         'ultra': 14580,
         'high': 10240,
         'medium': 7290,
         'low': 4860,
         'very-low': 2048
       };
-      var maxMobileTextureQuality = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
       var maxTextureSize = this.renderer.capabilities.maxTextureSize;
       var textureQuality = null;
       for (var _i4 = 0, _Object$entries4 = Object.entries(textureQualitySizes); _i4 < _Object$entries4.length; _i4++) {
         var _Object$entries4$_i = three_engine_slicedToArray(_Object$entries4[_i4], 2),
           _textureQuality = _Object$entries4$_i[0],
           textureSize = _Object$entries4$_i[1];
-        if (textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize) {
+        if (textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize && textureQualitySizes[textureQuality] <= textureQualitySizes[maxTextureQuality] && (!window.mobileCheck() || textureQualitySizes[textureQuality] <= textureQualitySizes[maxMobileTextureQuality])) {
           textureQuality = _textureQuality;
         }
       }
-      if (maxMobileTextureQuality !== null && window.mobileCheck()) textureQuality = maxMobileTextureQuality;
       return textureQuality;
     }
   }]);

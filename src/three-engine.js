@@ -875,16 +875,16 @@ class ThreeEngine{
         debugFolder.close();
     }
 
-    getTextureQuality(textureQualitySizes={'ultra': 14580, 'high': 10240, 'medium': 7290, 'low': 4860, 'very-low': 2048}, maxMobileTextureQuality=null){
+    getTextureQuality(maxTextureQuality=null, maxMobileTextureQuality=null, textureQualitySizes=null){
+        if(textureQualitySizes == null) textureQualitySizes = {'ultra': 14580, 'high': 10240, 'medium': 7290, 'low': 4860, 'very-low': 2048};
         const maxTextureSize = this.renderer.capabilities.maxTextureSize;
     
         let textureQuality = null;
         for(const [_textureQuality, textureSize] of Object.entries(textureQualitySizes)){
-            if(textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize){
+            if(textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize && textureQualitySizes[textureQuality] <= textureQualitySizes[maxTextureQuality] && (!window.mobileCheck() || textureQualitySizes[textureQuality] <= textureQualitySizes[maxMobileTextureQuality])){
                 textureQuality = _textureQuality;
             }
         }
-        if(maxMobileTextureQuality !== null && window.mobileCheck()) textureQuality = maxMobileTextureQuality;
     
         return textureQuality;
     }
