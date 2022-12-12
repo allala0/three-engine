@@ -881,7 +881,7 @@ class ThreeEngine{
     
         let textureQuality = null;
         for(const [_textureQuality, textureSize] of Object.entries(textureQualitySizes)){
-            if(textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize && textureQualitySizes[textureQuality] <= textureQualitySizes[maxTextureQuality] && (!window.mobileCheck() || textureQualitySizes[textureQuality] <= textureQualitySizes[maxMobileTextureQuality])){
+            if((textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize) && textureSize <= textureQualitySizes[maxTextureQuality] && (!window.mobileCheck() || textureSize <= textureQualitySizes[maxMobileTextureQuality])){
                 textureQuality = _textureQuality;
             }
         }

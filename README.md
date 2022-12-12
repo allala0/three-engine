@@ -45,6 +45,7 @@ To run example:
     npm run example
 
 ## TODO
+- [ ] **Documentation!!!**
 - [ ] **Export all tools in ThreeEngine**
 - [ ] **Axes helper with signed axes**
 - [ ] **Screenshots**

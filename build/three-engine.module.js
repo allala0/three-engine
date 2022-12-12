@@ -2729,7 +2729,7 @@ var ThreeEngine = /*#__PURE__*/function () {
         var _Object$entries4$_i = three_engine_slicedToArray(_Object$entries4[_i4], 2),
           _textureQuality = _Object$entries4$_i[0],
           textureSize = _Object$entries4$_i[1];
-        if (textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize && textureQualitySizes[textureQuality] <= textureQualitySizes[maxTextureQuality] && (!window.mobileCheck() || textureQualitySizes[textureQuality] <= textureQualitySizes[maxMobileTextureQuality])) {
+        if ((textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize) && textureSize <= textureQualitySizes[maxTextureQuality] && (!window.mobileCheck() || textureSize <= textureQualitySizes[maxMobileTextureQuality])) {
           textureQuality = _textureQuality;
         }
       }
