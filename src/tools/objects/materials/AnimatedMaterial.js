@@ -199,7 +199,7 @@ class AnimatedMaterial extends ShaderMaterial{
     }
 
     clone(){
-        return new AnimatedMaterial(this.spriteSheet, {...this.parameters});
+        return new AnimatedMaterial(this.spriteSheet, {...this.parameters}, {...this.materialParameters});
     }
 }
 
