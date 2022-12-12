@@ -93,6 +93,7 @@ class TexturedMaterial extends ShaderMaterial{
 
         this.texture = texture;
         this.parameters = parameters;
+        this.materialParameters = materialParameters;
     }
 
     set texture(texture){
@@ -109,7 +110,7 @@ class TexturedMaterial extends ShaderMaterial{
     }
 
     clone(){
-        return new TexturedMaterial(this.texture, {...this.parameters});
+        return new TexturedMaterial(this.texture, {...this.parameters}, {...this.materialParameters});
     }
 }
 

@@ -71,6 +71,8 @@ class AnimatedMaterial extends ShaderMaterial{
     constructor(spriteSheet, parameters={}, materialParameters={}){
         super(materialParameters);
 
+
+
         this.isAnimatedMaterial = true;
 
         this.colorMultiplier = parameters.colorMultiplier !== undefined ? parameters.colorMultiplier : new Vector4(1, 1, 1, 1);
@@ -110,6 +112,7 @@ class AnimatedMaterial extends ShaderMaterial{
 
         this.spriteSheet = spriteSheet;
         this.parameters = parameters;
+        this.materialParameters = materialParameters;
 
         this.hidden = false;
         this.x = 0;
