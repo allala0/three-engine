@@ -8737,33 +8737,33 @@ var ThreeEngine = /*#__PURE__*/function () {
       debugFolder.add(this.controls, 'enabled').listen().name('Controls enabled').listen();
       debugFolder.close();
     }
+  }, {
+    key: "getTextureQuality",
+    value: function getTextureQuality() {
+      var textureQualitySizes = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+        'ultra': 14580,
+        'high': 10240,
+        'medium': 7290,
+        'low': 4860,
+        'very-low': 2048
+      };
+      var maxMobileTextureQuality = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var maxTextureSize = this.renderer.capabilities.maxTextureSize;
+      var textureQuality = null;
+      for (var _i4 = 0, _Object$entries4 = Object.entries(textureQualitySizes); _i4 < _Object$entries4.length; _i4++) {
+        var _Object$entries4$_i = three_engine_slicedToArray(_Object$entries4[_i4], 2),
+          _textureQuality = _Object$entries4$_i[0],
+          textureSize = _Object$entries4$_i[1];
+        if (textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize) {
+          textureQuality = _textureQuality;
+        }
+      }
+      if (maxMobileTextureQuality !== null && window.mobileCheck()) textureQuality = maxMobileTextureQuality;
+      return textureQuality;
+    }
   }]);
   return ThreeEngine;
 }();
-function setTextureQuality() {
-  var textureQualitySizes = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    'ultra': 14580,
-    'high': 10240,
-    'medium': 7290,
-    'low': 4860,
-    'very-low': 2048
-  };
-  var renderer = new external_THREE_namespaceObject.WebGLRenderer();
-  ThreeEngine.prototype.maxTextureSize = renderer.capabilities.maxTextureSize;
-  ThreeEngine.prototype.maxTextures = renderer.capabilities.maxTextures;
-  var textureQuality = 'very-low';
-  for (var _i4 = 0, _Object$entries4 = Object.entries(textureQualitySizes); _i4 < _Object$entries4.length; _i4++) {
-    var _Object$entries4$_i = three_engine_slicedToArray(_Object$entries4[_i4], 2),
-      _textureQuality = _Object$entries4$_i[0],
-      textureSize = _Object$entries4$_i[1];
-    if (textureSize > textureQualitySizes[ThreeEngine.textureQuality] && textureSize <= ThreeEngine.maxTextureSize) {
-      textureQuality = _textureQuality;
-    }
-  }
-  if (window.mobileCheck()) textureQuality = 'very-low';
-  ThreeEngine.prototype.textureQuality = textureQuality;
-}
-setTextureQuality();
 /* harmony default export */ const three_engine = (ThreeEngine);
 })();
 
