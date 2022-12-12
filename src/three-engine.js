@@ -874,30 +874,20 @@ class ThreeEngine{
         debugFolder.add(this.controls, 'enabled').listen().name('Controls enabled').listen();
         debugFolder.close();
     }
-}
 
-function setTextureQuality(textureQualitySizes={
-    'ultra': 14580,
-    'high': 10240,
-    'medium': 7290,
-    'low': 4860,
-    'very-low': 2048
-}){
-    const renderer = new WebGLRenderer;
-    ThreeEngine.prototype.maxTextureSize = renderer.capabilities.maxTextureSize;
-    ThreeEngine.prototype.maxTextures = renderer.capabilities.maxTextures;
-
-    let textureQuality = 'very-low';
-    for(const [_textureQuality, textureSize] of Object.entries(textureQualitySizes)){
-        if(textureSize > textureQualitySizes[ThreeEngine.textureQuality] && textureSize <= ThreeEngine.maxTextureSize){
-            textureQuality = _textureQuality;
+    getTextureQuality(textureQualitySizes={'ultra': 14580, 'high': 10240, 'medium': 7290, 'low': 4860, 'very-low': 2048}, maxMobileTextureQuality=null){
+        const maxTextureSize = this.renderer.capabilities.maxTextureSize;
+    
+        let textureQuality = null;
+        for(const [_textureQuality, textureSize] of Object.entries(textureQualitySizes)){
+            if(textureQuality === null || textureSize > textureQualitySizes[textureQuality] && textureSize <= maxTextureSize){
+                textureQuality = _textureQuality;
+            }
         }
+        if(maxMobileTextureQuality !== null && window.mobileCheck()) textureQuality = maxMobileTextureQuality;
+    
+        return textureQuality;
     }
-    if(window.mobileCheck()) textureQuality = 'very-low';
-
-    ThreeEngine.prototype.textureQuality = textureQuality;
 }
-
-setTextureQuality();
 
 export default ThreeEngine;
