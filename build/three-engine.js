@@ -7954,7 +7954,6 @@ var ThreeEngine = /*#__PURE__*/function () {
       this.init(this);
       this.inited = true;
     }
-    ;
     this.GameLoop();
   }
   three_engine_createClass(ThreeEngine, [{
@@ -8734,7 +8733,7 @@ var ThreeEngine = /*#__PURE__*/function () {
       }, 'promptRendererInfo').name('Prompt renderer info');
       debugFolder.add(this, 'addCameraTransition').name('Add camera transition');
       debugFolder.add(this, 'setCameraPosition').name('Set camera position');
-      debugFolder.add(this.controls, 'enabled').listen().name('Controls enabled').listen();
+      if (this.enableControls) debugFolder.add(this.controls, 'enabled').listen().name('Controls enabled').listen();
       debugFolder.close();
     }
   }, {

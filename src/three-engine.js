@@ -871,7 +871,7 @@ class ThreeEngine{
         debugFolder.add({promptRendererInfo: () => console.log(this.renderer.info)}, 'promptRendererInfo').name('Prompt renderer info');
         debugFolder.add(this, 'addCameraTransition').name('Add camera transition');
         debugFolder.add(this, 'setCameraPosition').name('Set camera position');
-        debugFolder.add(this.controls, 'enabled').listen().name('Controls enabled').listen();
+        if(this.enableControls) debugFolder.add(this.controls, 'enabled').listen().name('Controls enabled').listen();
         debugFolder.close();
     }
 

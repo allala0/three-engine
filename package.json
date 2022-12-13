@@ -22,7 +22,7 @@
     "svg",
     "html5"
   ],
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "Engine/framework for three.js",
   "main": "./build/three-engine.min.js",
   "module": "./build/three-engine.module.js",
