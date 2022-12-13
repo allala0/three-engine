@@ -94,7 +94,7 @@ new ThreeEngine({
             textMesh.position.z = 0.26;
             box.add(textMesh);
 
-            animatedPlane = new THREE.Mesh(new THREE.PlaneGeometry(2, 1), new AnimatedMaterial(threeEngine.assets.spriteSheet.data, {loop: true, aspectRatio: 2, fps: 3, repeat: 2, repeatTexture: false}, {side: THREE.DoubleSide, transparent: true}));
+            animatedPlane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new AnimatedMaterial(threeEngine.assets.spriteSheet.data, {loop: true, aspectRatio: 1, fps: 3, repeat: 1, repeatTexture: false}, {side: THREE.DoubleSide, transparent: true}));
             animatedPlane.position.y = -0.5;
             animatedPlane.material.play();
             threeEngine.scene.add(animatedPlane);
