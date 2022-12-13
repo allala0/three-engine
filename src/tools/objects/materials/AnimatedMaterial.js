@@ -87,7 +87,6 @@ class AnimatedMaterial extends ShaderMaterial{
         super(materialParameters);
 
 
-
         this.isAnimatedMaterial = true;
 
         this.colorMultiplier = parameters.colorMultiplier !== undefined ? parameters.colorMultiplier : new Vector4(1, 1, 1, 1);

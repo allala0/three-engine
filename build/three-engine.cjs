@@ -7879,8 +7879,8 @@ var ThreeEngine = /*#__PURE__*/function () {
     this.loadCss();
     this.setupDomElement();
     this.setParameter('DEV_MODE', false);
-    this.setParameter('enableControls', this.DEV_MODE);
-    this.setParameter('controlsEnabled', true);
+    this.setParameter('enableControls', false);
+    this.setParameter('controlsEnabled', this.enableControls);
     this.setParameter('enableStats', this.DEV_MODE);
     this.setParameter('enableGui', this.DEV_MODE);
     this.setParameter('disableContextMenu', false);

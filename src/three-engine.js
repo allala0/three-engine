@@ -69,8 +69,8 @@ class ThreeEngine{
         this.setupDomElement();
 
         this.setParameter('DEV_MODE', false);
-        this.setParameter('enableControls', this.DEV_MODE);
-        this.setParameter('controlsEnabled', true);
+        this.setParameter('enableControls', false);
+        this.setParameter('controlsEnabled', this.enableControls);
         this.setParameter('enableStats', this.DEV_MODE);
         this.setParameter('enableGui', this.DEV_MODE);
         this.setParameter('disableContextMenu', false);
@@ -147,7 +147,7 @@ class ThreeEngine{
 
         if(this.init){
             this.init(this); this.inited = true;
-        };
+        }
 
         this.GameLoop();
     }
