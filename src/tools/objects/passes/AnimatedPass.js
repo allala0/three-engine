@@ -16,6 +16,8 @@ class AnimatedPass extends ShaderPass{
         
         this.uniforms.repeatX.value = this.animatedMaterial.spriteSheet.tileCount.x;
         this.uniforms.repeatY.value = this.animatedMaterial.spriteSheet.tileCount.y;
+
+        this.uniforms.hidden.value = this.animatedMaterial.hidden;
     } 
 
     update(cameraAspect=1){

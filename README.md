@@ -46,6 +46,7 @@ To run example:
 
 ## TODO
 - [ ] **Documentation!!!**
+- [ ] **Fix FXAA antialias warning**
 - [ ] **Export all tools in ThreeEngine**
 - [ ] **Axes helper with signed axes**
 - [ ] **Screenshots**
