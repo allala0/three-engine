@@ -49,19 +49,34 @@ void main(){
     uv.y -= offset.y;
 
     if(!repeatTexture){
-        if(uv.x * aspectRatio > 1. || uv.x * aspectRatio < 0. || uv.y > 1. || uv.y < 0.) hidden = true;
+        // NEED TO BE FIXED, SOME STRANGE BORDERS ON TEXTURE EDGES WHEN ENABLING IT 
+        // if(uv.x * aspectRatio > 1. || uv.x * aspectRatio < 0. || uv.y > 1. || uv.y < 0.) hidden = true;
     }
     
     vec4 pixel;
 
     if(hidden) pixel = vec4(0., 0., 0., 0.);
     else{
-        uv.x = mod(uv.x * aspectRatio, 1.) / aspectRatio; 
-        uv.y = mod(uv.y, 1.);
+        if(repeatTexture){
+            while(uv.x > 1.){
+                uv.x -= 1.;
+            }
+            while(uv.y > 1.){
+                uv.y -= 1.;
+            }
+            while(uv.x < 0.){
+                uv.x += 1.;
+            }
+            while(uv.y < 0.){
+                uv.y += 1.;
+            }
+            // uv.x = mod(uv.x, 1.); 
+            // uv.y = mod(uv.y, 1.);
+        }
 
         vec2 pos = vec2(uv.x / tileCount.x * aspectRatio + tileOffset.x, uv.y / tileCount.y + tileOffset.y);
-        pixel = texture2D(uTexture, pos) * colorMultiplier + colorAdd;
-    } 
+        pixel = texture2D(uTexture, pos);
+    }
 
     gl_FragColor = pixel;
 }
