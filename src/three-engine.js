@@ -355,6 +355,7 @@ class ThreeEngine{
         this.gui.domElement.style.position = 'absolute';
         this.gui.domElement.style.right = 0;
         this.gui.domElement.style.top = 0;
+        this.gui.domElement.style.zIndex = 10000;
         
         this.domElement.appendChild(this.gui.domElement);
     }
