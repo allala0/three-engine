@@ -120,7 +120,7 @@ new ThreeEngine({
         enableTestLights: true,
         enableAntialias: true,
         disableContextMenu: true,
-        enableLoadingCircle: true,
+        enableLoadingBar: true,
         DEV_MODE: true,
         enableControls: true,
         cameraPosition: new THREE.Vector3(0, 0, 5),

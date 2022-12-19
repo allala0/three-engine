@@ -26,8 +26,7 @@ const stylesheet = /* css */ `
   left: calc(50vw - 60vw / 2);
   top: calc(50vh - 4vw / 2);
   position: absolute;
-  border: 3px solid white;
-  border-width: calc(3px / var(--DPR));
+  border: 5px solid white;
   box-sizing: border-box;
 }
 
