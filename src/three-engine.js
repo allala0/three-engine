@@ -145,9 +145,10 @@ class ThreeEngine{
 
         if(this.enableTestLights) this.addTestLights();
 
-        if(this.init){
-            this.init(this); this.inited = true;
-        }
+        
+        this._init();
+        if(this.init) this.init(this); 
+        this.inited = true;
 
         this.GameLoop();
     }
@@ -549,6 +550,10 @@ class ThreeEngine{
 
         if(isHovered) window.cursorPointer();
         else window.cursorArrow();
+    }
+
+    _init(){
+        this._onResize();
     }
 
     _initLoaded(){

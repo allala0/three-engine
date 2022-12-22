@@ -14,7 +14,7 @@ Complatible with three.js r.147
     npm install three-engine
 
 ## How to use
-    import * as THREE from 'three-engine';
+    import * as THREE from 'three';
     import ThreeEngine from 'three-engine';
     new ThreeEngine({
         callbacks: {

@@ -7947,10 +7947,9 @@ var ThreeEngine = /*#__PURE__*/function () {
     if (this.enableGui) this.addGui();
     if (this.enablePostprocessing) this.addPostProcessing();
     if (this.enableTestLights) this.addTestLights();
-    if (this.init) {
-      this.init(this);
-      this.inited = true;
-    }
+    this._init();
+    if (this.init) this.init(this);
+    this.inited = true;
     this.GameLoop();
   }
   three_engine_createClass(ThreeEngine, [{
@@ -8372,6 +8371,11 @@ var ThreeEngine = /*#__PURE__*/function () {
         _iterator3.f();
       }
       if (isHovered) window.cursorPointer();else window.cursorArrow();
+    }
+  }, {
+    key: "_init",
+    value: function _init() {
+      this._onResize();
     }
   }, {
     key: "_initLoaded",
