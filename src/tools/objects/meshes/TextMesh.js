@@ -29,7 +29,6 @@ class TextMesh extends Mesh{
         this.text = text;
         
         this._position = this.position.clone();
-        this.centerGeometry();
     }
 
     update(){
@@ -38,7 +37,6 @@ class TextMesh extends Mesh{
             this.geometry.dispose();
             this.geometry = new TextGeometry(this.text, {font: this.font, height: this.height, size: this.size});
             this.position.copy(this._position);
-            this.centerGeometry();
         }
     }
 }
