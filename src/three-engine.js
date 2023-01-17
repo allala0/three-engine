@@ -894,6 +894,12 @@ class ThreeEngine{
     
         return textureQuality;
     }
+
+    dispose(){
+        this.domContainer.innerHTML = '';
+        this.renderer.dispose();
+        this.renderer.forceContextLoss();
+    }
 }
 
 export default ThreeEngine;
