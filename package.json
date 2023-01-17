@@ -22,7 +22,7 @@
     "svg",
     "html5"
   ],
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "Engine/framework for three.js",
   "main": "./build/three-engine.min.js",
   "module": "./build/three-engine.module.js",
@@ -80,6 +80,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "three": "^0.147.0"
+    "three": "^0.148.0"
   }
 }
