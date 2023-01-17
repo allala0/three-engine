@@ -8763,6 +8763,13 @@ var ThreeEngine = /*#__PURE__*/function () {
       }
       return textureQuality;
     }
+  }, {
+    key: "dispose",
+    value: function dispose() {
+      this.domContainer.innerHTML = '';
+      this.renderer.dispose();
+      this.renderer.forceContextLoss();
+    }
   }]);
   return ThreeEngine;
 }();
