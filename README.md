@@ -5,10 +5,10 @@
 <br>
 
 ## What is <b>three-engine</b>?
-three-engine is framework/engine for three.js.
+three-engine let's you create a three.js scene with one line of code.
 
 ## Compatibility
-Complatible with three.js r.147
+Complatible with three.js r.148
 
 ## How to install
     npm install three-engine
@@ -45,6 +45,7 @@ To run example:
     npm run example
 
 ## TODO
+- [ ] **Switch to Vite**
 - [ ] **Documentation!!!**
 - [ ] **Fix FXAA antialias warning**
 - [ ] **Export all tools in ThreeEngine**
